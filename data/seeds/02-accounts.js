@@ -14,7 +14,7 @@ const accounts = [
   { name: 'account-13', budget: 1234.00 },
 ]
 
-exports.accounts = accounts
+exports.accounts = accounts;
 
 exports.seed = function (knex, Promise) {
   return knex('accounts').truncate()
