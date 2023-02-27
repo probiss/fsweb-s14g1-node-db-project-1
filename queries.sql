@@ -74,7 +74,7 @@
 
 -- "The Shire" için bir müşteri kaydı ekleyin, ilgili kişi adı "Bilbo Baggins", adres - "Bag End" içinde "1 Hobbit-Hole", posta kodu "111" ve ülke "Middle Earth"
     INSERT INTO Customers
-    VALUES (92,'The Shire','Bilbo Baggins','Bag End', '1 Hobbit Hole', 111,'Middle Earth');
+    VALUES (92,'The Shire','Bilbo Baggins','Bag End', '1 Hobbit Hole', 111,'Middle Earth'); --ID vermeden de değerleri eşleyip yapılabilirdi...
 ---------
     db.insert('Customers').values(92,'The Shire',''.........)
     db('Customers').insert({CustomerName: 'The Shire'}, {ContactName: 'Bilbo Baggins'}, ........ )
@@ -87,11 +87,21 @@
     SET PostalCode = '11122'
     WHERE ContactName = 'Bilbo Baggins';
 ---------
-    db.update('Customers').set({ContactName: 'Bilbo Baggins'}).where({PostalCode:'11122'});
+    db.update('Customers').where({PostalCode:'11122'})set({ContactName: 'Bilbo Baggins'});
 ---------
     92	The Shire	Bilbo Baggins	Bag End	1 Hobbit Hole	11122	Middle Earth
 ---------
 
 -- (Zorlayıcı Görev) Müşteriler tablosunda kaç farklı şehrin saklandığını keşfetmek için bir sorgu bulun. Tekrarlar çift sayılmamalıdır
-    
+    SELECT COUNT(DISTINCT City)
+    FROM Customers;
+--------
+
+--------
+    COUNT(DISTINCT City)
+    70
 -- (Zorlayıcı Görev) 20 karakterden uzun adları olan tüm tedarikçileri bulun. Adın uzunluğunu almak için "length(SupplierName)" kullanabilirsiniz.
+    SELECT *
+    FROM Suppliers
+    WHERE length(SupplierName) > 20;
+--------
