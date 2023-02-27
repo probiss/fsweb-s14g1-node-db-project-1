@@ -1,7 +1,9 @@
 -- Veritabanı Sorguları
 
 -- Posta kodu 1010 olan tüm müşterileri bulun
-
+    -Cactus Comidas para llevar
+    -Océano Atlántico Ltda.
+    -Rancho grande
 -- id'si 11 olan tedarikçinin telefon numarasını bulun
 
 -- Verilen ilk 10 siparişi, sipariş tarihine göre azalan şekilde listeleyin
