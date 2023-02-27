@@ -24,6 +24,7 @@ exports.checkAccountPayload = (req, res, next) => {
   //   res.status(400).json({mesaage:error.mesaage || "Hata oluştu"})
   // }
   const { name, budget } = req.body;
+  
   if (!name || budget === undefined) {
     res.status(400).json({ message: "name and budget are required" });
   } else if (name.trim().length < 3 || name.trim().length > 100) {
