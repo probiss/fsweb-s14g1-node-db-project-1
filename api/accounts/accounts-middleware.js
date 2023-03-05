@@ -63,8 +63,8 @@ exports.checkAccountNameUnique = async (req, res, next) => {
 
 exports.checkAccountId = async (req, res, next) => {
   try {
-    const account = await stillShabby.getById(req.params.id);
-    if (!account) {
+    const isExist = await stillShabby.getById(req.params.id);
+    if (!isExist) {
       res.status(404).json({ message: "account not found" });
     } else {
       req.account = account;

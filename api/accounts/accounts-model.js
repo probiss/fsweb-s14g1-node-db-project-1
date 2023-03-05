@@ -13,8 +13,8 @@ const getById = (id) => {
 
 const create = (account) => {
   //inset into account values (id,name,budget)
-  const insertedAccount = db("accounts")
-    .insert(account)
+  const insertedAccount = 
+    db("accounts").insert(account)
     .then((id) => {
       return getById(id[0]);
     });
